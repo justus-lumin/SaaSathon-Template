@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --color-black: #000000;
+  --color-charcoal: #242424;
+  --color-blue: #2395ff;
+  --color-off-white: #f0f0f0;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+}
+:root {
+  --grid-margin: 20px;
+  --grid-gutter: 20px;
+}
+@media (min-width: 1024px) {
+  :root {
+    --grid-margin: 30px;
+  }
+}
+@utility grid-container {
+  width: 100%;
+  padding-inline: var(--grid-margin);
+}
+@utility grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+}
+@utility text-h1 {
+  font-size: 48px;
+  font-weight: 520;
+  letter-spacing: -0.0109em;
+  line-height: 1;
+  font-variation-settings: "opsz" 32;
+  @media (min-width: 1024px) {
+    font-size: 92px;
+  }
+}
+@utility text-h2 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.1;
+  font-variation-settings: "opsz" 32;
+  @media (min-width: 1024px) {
+    font-size: 48px;
+  }
+}
+@utility text-h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.1;
+  @media (min-width: 1024px) {
+    font-size: 32px;
+  }
+}
+@utility text-body-1 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  @media (min-width: 1024px) {
+    font-size: 24px;
+    line-height: 1.15;
+  }
+}
+@utility text-body-2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+@layer base {
+  body {
+    background: white;
+    color: var(--color-black);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-black);
+    outline-offset: 4px;
+  }
+  button,
+  a,
+  input,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+  ::selection {
+    background: var(--color-blue);
+    color: black;
+  }
+}
